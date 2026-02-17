@@ -1,66 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Navbar />
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-8 text-center">
+            <h1 className="display-4 mb-4">Multi-Tenant SaaS Billing API</h1>
+            <p className="lead mb-4">
+              A complete billing platform with usage tracking, rate limiting, and invoice generation.
+            </p>
+            
+            <div className="row mt-5">
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">Multi-Tenancy</h5>
+                    <p className="card-text">Complete tenant isolation with workspace management</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">Usage Tracking</h5>
+                    <p className="card-text">Real-time API call tracking and quota management</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">Smart Billing</h5>
+                    <p className="card-text">Tiered pricing with automated invoice generation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <Link href="/register" className="btn btn-primary btn-lg me-3">
+                Get Started
+              </Link>
+              <Link href="/login" className="btn btn-outline-primary btn-lg">
+                Sign In
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </>
   );
 }
