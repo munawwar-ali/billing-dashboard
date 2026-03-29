@@ -1,7 +1,8 @@
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 // Backend API base URL
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 // Create axios instance
 const api = axios.create({
@@ -11,7 +12,7 @@ const api = axios.create({
   },
 });
 
-// Add token to requests if it exists
+// Add token to requests
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -19,6 +20,19 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
+// Global response error handler
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // We only silently pass 401s if they are handled by components,
+    // but a global toast here is good for general 500s.
+    if (error.response?.status >= 500) {
+      toast.error('Server error. Please try again later.');
+    }
+    return Promise.reject(error);
+  }
+);
 
 // Auth APIs
 export const register = (data) => api.post('/auth/register', data);
