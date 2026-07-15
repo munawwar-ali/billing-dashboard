@@ -1,10 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
 
 // Import Pages (Repurposing existing Next.js file structure)
+import LandingPage from './landing/page';
 import TenantManagement from './page';
 import Dashboard from './dashboard/page';
 import Billing from './billing/page';
@@ -34,8 +35,8 @@ function App() {
         }}
       />
       <Routes>
-        {/* Set Dashboard as default landing since marketing page is removed */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        {/* Public marketing landing page */}
+        <Route path="/" element={<LandingPage />} />
         <Route path="/tenants" element={<TenantManagement />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/billing" element={<Billing />} />

@@ -1,0 +1,43 @@
+/* ---------------------------------------------------------
+   Auth pages (Login / Register) — reuses the landing page's
+   light-violet token system for brand consistency.
+--------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+.auth {
+  --lp-bg: #f7f7fc;
+  --lp-bg-alt: #f4f3fc;
+  --lp-ink: #0f1222;
+  --lp-body: #5b5f73;
+  --lp-border: #e7e6f5;
+  --lp-accent: #7c3aed;
+  --lp-accent-dark: #5b21b6;
+  --lp-navy: #12162a;
+  --auth-error: #ef4444;
+  --auth-warn: #f97316;
+  --auth-cyan: #14c9e1;
+
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--lp-bg);
+  color: var(--lp-ink);
+}
+
+.auth .font-display {
+  font-family: "Eb Garamond", Georgia, serif;
+}
+
+.auth .font-mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+.auth-input:focus {
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
