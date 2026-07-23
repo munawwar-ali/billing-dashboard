@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import BillFlowIcon from "../icons/BillFlowIcon";
 
 // href = in-page scroll target, external = react-router path
 const LINKS = [
@@ -32,8 +33,11 @@ export default function Navbar() {
       } backdrop-blur-xl`}
     >
       <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 lg:px-10">
-        <Link to="/" className="font-display text-2xl font-semibold tracking-tight text-[var(--lp-ink)]">
-          BillFlow
+        <Link to="/" className="flex items-center gap-2 text-[var(--lp-accent-dark)]">
+          <BillFlowIcon size={28} />
+          <span className="font-display text-2xl font-semibold tracking-tight text-[var(--lp-ink)]">
+            BillFlow
+          </span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
