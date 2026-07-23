@@ -20,29 +20,48 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-[calc(100vh-4rem)] scroll-mt-24 items-center justify-center overflow-hidden px-6 py-20"
     >
-      {/* Ambient background — subtle brand blobs + faint grid, no video */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-[10%] top-[-10%] h-[480px] w-[480px] rounded-full bg-[#7C3AED]/15 blur-[110px]"
+      {/* Decorative hero background — grid texture + floating 3D shapes */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 hidden bg-cover bg-center bg-no-repeat opacity-20 sm:block"
+        style={{ backgroundImage: "url('/images/hero/hero-grid-bg.webp')" }}
+      />
+
+      <motion.div
+        animate={{ y: [0, -14, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute left-[-70px] top-1/3 hidden h-40 w-40 lg:block sm:h-48 sm:w-48 md:h-64 md:w-64"
+      >
+        <img
+          src="/images/hero/hero-abstract-img3.webp"
+          alt=""
+          className="h-full w-full opacity-90"
         />
-        <motion.div
-          animate={{ x: [0, -50, 0], y: [0, 40, 0] }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute right-[8%] top-[10%] h-[420px] w-[420px] rounded-full bg-[#8B5CF6]/15 blur-[110px]"
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, 16, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute right-[-80px] top-16 hidden h-44 w-44 lg:block sm:h-56 sm:w-56 md:top-24 md:h-80 md:w-80"
+      >
+        <img
+          src="/images/hero/hero-abstract-img1.webp"
+          alt=""
+          className="h-full w-full opacity-80"
         />
-        <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--lp-border) 1px, transparent 1px), linear-gradient(90deg, var(--lp-border) 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            maskImage:
-              "radial-gradient(ellipse 60% 60% at 50% 30%, black, transparent)",
-          }}
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute left-1/2 top-4 hidden h-16 w-16 -translate-x-1/2 lg:block sm:h-20 sm:w-20 md:top-0 md:h-28 md:w-28"
+      >
+        <img
+          src="/images/hero/hero-abstract-img2.webp"
+          alt=""
+          className="h-full w-full opacity-80"
         />
-      </div>
+      </motion.div>
 
       <motion.div
         variants={container}
