@@ -14,6 +14,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { register } from "../../utils/api"; // adjust path if your utils/api.js lives elsewhere
+import BillFlowIcon from "../icons/BillFlowIcon";
 
 const STRENGTH_LABELS = ["Too Short", "Weak", "Fair", "Good", "Strong"];
 const STRENGTH_COLORS = [
@@ -126,8 +127,8 @@ export default function RegisterForm() {
       >
         <div className="mb-10 text-center md:text-left">
           <div className="mb-4 flex items-center justify-center gap-2 md:justify-start">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--lp-accent)] text-xl font-bold text-white">
-              B
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--lp-accent)]">
+              <BillFlowIcon size={22} className="text-white" />
             </div>
             <span className="font-display text-xl font-semibold text-[var(--lp-accent-dark)]">
               BillFlow

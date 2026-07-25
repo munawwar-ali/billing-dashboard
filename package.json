@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite --config next.config.mjs",
-    "build": "vite build --config next.config.mjs",
-    "preview": "vite preview --config next.config.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint"
   },
   "dependencies": {
